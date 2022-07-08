@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calcula;
+
+service CalculaService {
+    rpc FindNumbers(FindNumbersRequest) returns (FindNumbersResponse);
+}
+
+message FindNumbersRequest{
+    repeated int32 vector = 1;
+    int32 end = 2;
+    int32 start = 3;
+}
+
+message FindNumbersResponse{
+    int32 max = 1;
+    int32 min = 2;
+}
